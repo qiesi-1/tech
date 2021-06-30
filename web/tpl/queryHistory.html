@@ -1,0 +1,62 @@
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>
+			查询历史记录信息页面
+		</title>
+		<style>
+			ul {
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+				overflow: hidden;
+				background-color: #333;
+			}
+			
+			li {
+				float: right;
+				margin-right: 100px;
+			}
+			
+			li a {
+				display: block;
+				color: white;
+				text-align: center;
+				padding: 14px 16px;
+				text-decoration: none;
+			}
+			
+			li a:hover {
+				background-color: #111;
+			}
+		</style>
+	</head>
+
+	<body>
+		<ul>
+			<li><a class="active" href="/savePage?f=f">添加信息</a></li>
+			<li><a href="/findHistoryPage">查询历史记录</a></li>
+		</ul>
+		<div id="query">
+			<div class="left">
+				<form action="/findById" method="post" name="queryForm">
+					<p>
+						EntityID：
+						<!-- <input type="text" name="" value="" placeholder="EntityID" maxlength="18"> -->
+						<input type="text" class="input_text" name="entityID" onfocus="if(this.placeholder=='EntityID'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='EntityID';this.className ='input_text'}" value=""
+						placeholder="EntityID" maxlength="18">
+					</p>
+					<!-- <p>
+                  姓名：
+                  <input type="text" name="" value="" placeholder="EntityID">
+                </p> -->
+					<p>
+						<button type="submit" name="button" class="btn">查询</button>
+					</p>
+				</form>
+			</div>
+		</div>
+	</body>
+
+</html>

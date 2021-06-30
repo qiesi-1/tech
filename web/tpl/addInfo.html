@@ -1,0 +1,97 @@
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>
+			添加信息页面
+		</title>
+		<style>
+			ul {
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+				overflow: hidden;
+				background-color: #333;
+			}
+			
+			li {
+				float: right;
+				margin-right: 100px;
+			}
+			
+			li a {
+				display: block;
+				color: white;
+				text-align: center;
+				padding: 14px 16px;
+				text-decoration: none;
+			}
+			
+			li a:hover {
+				background-color: #111;
+			}
+			
+			table {
+				border-collapse: collapse;
+			}
+			
+			table,
+			th,
+			td {
+				border: 1px solid blueviolet;
+			}
+		</style>
+	</head>
+
+	<body>
+		<ul>
+			<li><a class="active" href="index.html">首页</a></li>
+			<li><a href="/savePage?f=f">添加信息</a></li>
+		</ul>
+		{{if .Flag}}
+		<div id="popout">
+			<div class="popout">
+				<div class="">{{.Msg}}</div>
+				<p>
+					<button type="button" name="button" onclick="location.href='/savePage?f=f'">好的</button>
+				</p>
+			</div>
+		</div>
+		{{end}}
+
+		<div>
+			<form action="/save" method="post" name="addForm">
+				<p>
+					<span>姓名：</span>
+					<span>
+                       
+                    	<input type="text" name="name" class="input_text" tabindex="1" placeholder="姓名" size="25" autocomplete="off" />
+					</span>
+				</p>
+				<p>
+					<span>EntityID：</span>
+					<span>
+                        
+                    	<input type="text" name="entityID" class="input_text" tabindex="1" placeholder="籍贯" size="25" autocomplete="off" />
+					</span>
+				</p>
+				<p>
+					<span>性别：</span>
+					<span>
+                        
+                    	<input type="text" name="gender" class="input_text" tabindex="1" placeholder="性别" size="25" autocomplete="off" />
+					</span>
+				</p>
+				<p>
+					<span>联系电话：</span>
+					<span>
+                        
+                    	<input type="text" name="mphone" class="input_text" tabindex="1" placeholder="电话号码" size="25" autocomplete="off" />
+					</span>
+				</p>
+				<button type="submit" name="button" class="btn">添加信息</button>
+			</form>
+		</div>
+	</body>
+
+</html>
